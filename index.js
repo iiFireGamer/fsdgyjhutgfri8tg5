@@ -39,33 +39,4 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 });
 
-client.on('message', message => {
-  if (message.content === (prefix + "help")) {
-  let embed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("#8650a7")
-.addField("g!ban" , "ban player")
-.addField("g!kick" , "kick player")
-.addField("g!rip" , "see rules")
-.addField("g!avater" , "see your avatar")
-message.channel.sendEmbed(embed);
- }
-});
-client.on('message', message => {
-  // If the message is 'g!rip'
-  if (message.content === 'g!rip') {
-      // Create the attachment using Attachment
-      const attachment = new Attachment('https://i.imgur.com/w3duR07.png');
-      // Send the attachment in the message channel
-      message.channel.send(attachment);
-  }
-});
-client.on('message', message => {
-  // If the message is "what is my avatar"
-  if (message.content === 'g!avater') {
-    // Send the user's avatar URL
-    message.reply(message.author.avatarURL);
-  }
-});
-
 bot.login(tokenfile.token);
